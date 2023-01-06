@@ -106,7 +106,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbSuaLoaiMH.Properties.Items.AddRange(new object[] {
             "Đồ uống",
-            "Đồ ăn"});
+            "Đồ ăn",
+            "Khác"});
             this.cbSuaLoaiMH.Size = new System.Drawing.Size(186, 28);
             this.cbSuaLoaiMH.TabIndex = 49;
             // 

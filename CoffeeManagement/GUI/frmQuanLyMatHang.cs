@@ -27,9 +27,13 @@ namespace CoffeeManagement
         }
         private void cbDoAn_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeListMH(); ;
+            ChangeListMH();
         }
 
+        private void cbAnother_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeListMH();
+        }
         private void txtMatHangTimKiem_TextChanged(object sender, EventArgs e)
         {
             ChangeListMH();
@@ -50,68 +54,77 @@ namespace CoffeeManagement
                 keyword = "";
             }
 
-            if (cbDoUong.Checked == true)
+            if (cbDoUong.Checked == false && cbDoAn.Checked == true && checkAnother.Checked == false)
             {
-                if (cbDoAn.Checked == true)
-                {
-                    FetchResult(Result, keyword, 2);
-                }
-                else
-                {
-                    FetchResult(Result, keyword, -1);
-                }
+                FetchResult(Result, keyword, 1);
             }
-            else
+            else if(cbDoUong.Checked == true && cbDoAn.Checked == false && checkAnother.Checked == false)
             {
-                if (cbDoAn.Checked == false)
-                {
-                    /// Không có data
-                }
-                else
-                {
-                    FetchResult(Result, keyword, 1);
-                }
+                FetchResult(Result, keyword, 2);
+            }
+            else if (cbDoUong.Checked == false && cbDoAn.Checked == false && checkAnother.Checked == true)
+            {
+                FetchResult(Result, keyword, 3);
+            }
+            else if(cbDoUong.Checked == true && cbDoAn.Checked == true && checkAnother.Checked == false)
+            {
+                FetchResult(Result, keyword, 4);
+            }
+            else if (cbDoUong.Checked == false && cbDoAn.Checked == true && checkAnother.Checked == true)
+            {
+                FetchResult(Result, keyword, 5);
+            }
+            else if (cbDoUong.Checked == true && cbDoAn.Checked == false && checkAnother.Checked == true)
+            {
+                FetchResult(Result, keyword, 6);
+            }
+            else if (cbDoUong.Checked == true && cbDoAn.Checked == true && checkAnother.Checked == true)
+            {
+                FetchResult(Result, keyword, 7);
             }
             dtgMatHangKho.DataSource = Result;
         }
 
         private void FetchResult(List<MatHangChiTiet> List, string keyword, int type)
         {
-            string LoaiDoUong;
+            List<string> LoaiDoUong = new List<string>();
             if (type == 1) // Ðồ ăn
             {
-                LoaiDoUong = "Đĩa";
+                LoaiDoUong = new List<string> { "Đồ ăn" };
             }
-            else if (type == -1) // Ðồ uống
+            else if (type == 2) // Ðồ uống
             {
-                LoaiDoUong = "Ly";
+                LoaiDoUong = new List<string> { "Đồ uống" };
             }
-            else
+            else if(type == 3)
             {
-                LoaiDoUong = null;
+                LoaiDoUong = new List<string> { "Khác" };
             }
-
-            if (LoaiDoUong == null)
+            else if(type == 4)
             {
-                foreach (MatHangChiTiet mh in ListMH)
+                LoaiDoUong = new List<string> { "Đồ ăn", "Đồ uống" };
+            }else if(type == 5)
+            {
+                LoaiDoUong = new List<string> { "Đồ ăn", "Khác" };
+            }
+            else if (type == 6)
+            {
+                LoaiDoUong = new List<string> { "Đồ uống", "Khác" };
+            }
+            else if (type == 7)
+            {
+                LoaiDoUong = new List<string> { "Đồ ăn", "Đồ uống", "Khác" };
+            }
+           
+            foreach (MatHangChiTiet mh in ListMH)
+            {
+                if (Function.Instance.RemoveSign(mh.TenMatHang.ToLower()).Contains(Function.Instance.RemoveSign(keyword))
+                    && LoaiDoUong.Contains(mh.LoaiMatHang))
                 {
-                    if (Function.Instance.RemoveSign(mh.TenMatHang.ToLower()).Contains(Function.Instance.RemoveSign(keyword)))
-                    {
-                        List.Add(mh);
-                    }
+                    List.Add(mh);
                 }
             }
-            else
-            {
-                foreach (MatHangChiTiet mh in ListMH)
-                {
-                    if (Function.Instance.RemoveSign(mh.TenMatHang.ToLower()).Contains(Function.Instance.RemoveSign(keyword))
-                        && mh.DonViTinh.Equals(LoaiDoUong))
-                    {
-                        List.Add(mh);
-                    }
-                }
-            }
+            
 
         }
 

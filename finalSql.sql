@@ -1,9 +1,10 @@
 ﻿-------------------------------TẠO CSDL, TẠO BẢNG, ...
+use master
+drop database QuanLyQuanCafe
 CREATE DATABASE QuanLyQuanCafe
 GO
 USE QuanLyQuanCafe
 GO
-
 
 
 --Ban
@@ -125,6 +126,9 @@ INSERT INTO MatHang VALUES('F008', N'Chả ram tôm đất', N'Đồ ăn', N'Đ�
 INSERT INTO MatHang VALUES('F009', N'Hồ lô', N'Đồ ăn', N'Đĩa', 10000)
 INSERT INTO MatHang VALUES('F010', N'Cơm chiên muối é', N'Đồ ăn', N'Đĩa', 19000)
 INSERT INTO MatHang VALUES('F011', N'Khô gà', N'Đồ ăn', N'Đĩa', 17000)
+INSERT INTO MatHang VALUES('A001', N'Cafe bột', N'Khác', N'Gói', 17000)
+INSERT INTO MatHang VALUES('A002', N'Cafe hạt', N'Khác', N'Gói', 20000)
+
 
 
 SET DATEFORMAT DMY
@@ -556,21 +560,43 @@ BEGIN
 		END
 	ELSE
 		BEGIN
-			IF (SELECT COUNT(ID) FROM dbo.MatHang WHERE LoaiMatHang=N'Đồ uống')=0
-				BEGIN	
-					UPDATE dbo.MatHang
-					SET ID='D001'
-					WHERE ID=@CUR_ID
+			IF (@LOAIMATHANG=N'Đồ uống')
+				BEGIN
+					IF (SELECT COUNT(ID) FROM dbo.MatHang WHERE LoaiMatHang=N'Đồ uống')=0
+						BEGIN	
+							UPDATE dbo.MatHang
+							SET ID='D001'
+							WHERE ID=@CUR_ID
+						END
+					ELSE
+						BEGIN
+							SELECT @PRE_ID = MAX(RIGHT(ID,2)) FROM dbo.MatHang
+							WHERE LoaiMatHang=N'Đồ uống'
+							SET @PRE_ID = @PRE_ID + 1
+							DECLARE @TEMP_ID_2 NVARCHAR(5) = FORMAT(CAST(@PRE_ID AS INT),'000')
+							UPDATE dbo.MatHang
+							SET ID =CONCAT('D',@TEMP_ID_2)
+							WHERE ID=@CUR_ID
+						END
 				END
 			ELSE
 				BEGIN
-					SELECT @PRE_ID = MAX(RIGHT(ID,2)) FROM dbo.MatHang
-					WHERE LoaiMatHang=N'Đồ uống'
-					SET @PRE_ID = @PRE_ID + 1
-					DECLARE @TEMP_ID_2 NVARCHAR(5) = FORMAT(CAST(@PRE_ID AS INT),'000')
-					UPDATE dbo.MatHang
-					SET ID =CONCAT('D',@TEMP_ID_2)
-					WHERE ID=@CUR_ID
+					IF (SELECT COUNT(ID) FROM dbo.MatHang WHERE LoaiMatHang=N'Khác')=0
+						BEGIN	
+							UPDATE dbo.MatHang
+							SET ID='A001'
+							WHERE ID=@CUR_ID
+						END
+					ELSE
+						BEGIN
+							SELECT @PRE_ID = MAX(RIGHT(ID,2)) FROM dbo.MatHang
+							WHERE LoaiMatHang=N'Khác'
+							SET @PRE_ID = @PRE_ID + 1
+							DECLARE @TEMP_ID_3 NVARCHAR(5) = FORMAT(CAST(@PRE_ID AS INT),'000')
+							UPDATE dbo.MatHang
+							SET ID =CONCAT('A',@TEMP_ID_3)
+							WHERE ID=@CUR_ID
+						END
 				END
 		END  
 END

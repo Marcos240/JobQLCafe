@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeeManagement.GUI;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -141,11 +143,12 @@ namespace CoffeeManagement
             BanDAO.Instance.UpdateData(ID_Ban, 0); //Cập nhật tình trạng của bàn thành bàn trống. 
             //Xuất hoá đơn
             Function.Instance.ExportHoaDonFile(HoaDon.ID);
+           
+            ViewInovce a = new ViewInovce();
+            a.Print(HoaDon.ID);
+            a.ShowDialog();
         }
         #endregion
-
-
-
 
     }
 }

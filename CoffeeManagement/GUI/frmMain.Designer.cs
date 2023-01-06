@@ -62,6 +62,7 @@
             this.lbSoLuong = new DevExpress.XtraEditors.LabelControl();
             this.lbTenMatHang = new DevExpress.XtraEditors.LabelControl();
             this.grbTimKiem = new DevExpress.XtraEditors.GroupControl();
+            this.checkAnother = new DevExpress.XtraEditors.CheckEdit();
             this.dtgDanhSachMatHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbTimKiem)).BeginInit();
             this.grbTimKiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkAnother.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachMatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDoAn.Properties)).BeginInit();
@@ -434,6 +436,7 @@
             this.grbTimKiem.AppearanceCaption.Options.UseFont = true;
             this.grbTimKiem.AppearanceCaption.Options.UseForeColor = true;
             this.grbTimKiem.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.grbTimKiem.Controls.Add(this.checkAnother);
             this.grbTimKiem.Controls.Add(this.dtgDanhSachMatHang);
             this.grbTimKiem.Controls.Add(this.btnTimKiem);
             this.grbTimKiem.Controls.Add(this.txtTimKiem);
@@ -444,6 +447,19 @@
             this.grbTimKiem.Size = new System.Drawing.Size(375, 591);
             this.grbTimKiem.TabIndex = 1;
             this.grbTimKiem.Text = "KHU VỰC TÌM KIẾM";
+            // 
+            // checkAnother
+            // 
+            this.checkAnother.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkAnother.EditValue = true;
+            this.checkAnother.Location = new System.Drawing.Point(266, 40);
+            this.checkAnother.Name = "checkAnother";
+            this.checkAnother.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAnother.Properties.Appearance.Options.UseFont = true;
+            this.checkAnother.Properties.Caption = "Khác";
+            this.checkAnother.Size = new System.Drawing.Size(75, 20);
+            this.checkAnother.TabIndex = 4;
+            this.checkAnother.CheckedChanged += new System.EventHandler(this.checkAnother_CheckedChanged);
             // 
             // dtgDanhSachMatHang
             // 
@@ -567,7 +583,7 @@
             // 
             this.cbDoAn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbDoAn.EditValue = true;
-            this.cbDoAn.Location = new System.Drawing.Point(256, 40);
+            this.cbDoAn.Location = new System.Drawing.Point(146, 40);
             this.cbDoAn.Name = "cbDoAn";
             this.cbDoAn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDoAn.Properties.Appearance.Options.UseFont = true;
@@ -1022,7 +1038,6 @@
             series1.Name = "Thu";
             this.chartReport.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartReport.SeriesTemplate.SeriesColorizer = null;
             this.chartReport.Size = new System.Drawing.Size(577, 509);
             this.chartReport.TabIndex = 3;
             // 
@@ -1404,7 +1419,7 @@
             this.Controls.Add(this.tabMain);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmMain.IconOptions.Icon")));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMART COFFEE MANAGEMENT";
@@ -1422,6 +1437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbTimKiem)).EndInit();
             this.grbTimKiem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkAnother.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachMatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDoAn.Properties)).EndInit();
@@ -1538,6 +1554,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private DevExpress.XtraEditors.CheckEdit checkAnother;
     }
 }
 

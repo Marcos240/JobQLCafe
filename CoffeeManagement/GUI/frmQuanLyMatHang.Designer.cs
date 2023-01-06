@@ -53,6 +53,7 @@
             this.dtgMatHangKho = new System.Windows.Forms.DataGridView();
             this.btnXoaTV = new DevExpress.XtraEditors.SimpleButton();
             this.btnSuaTV = new DevExpress.XtraEditors.SimpleButton();
+            this.checkAnother = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grNhapKho)).BeginInit();
             this.grNhapKho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbDVT.Properties)).BeginInit();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbDoUong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatHangTimKiem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMatHangKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkAnother.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grNhapKho
@@ -97,7 +99,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbDVT.Properties.Items.AddRange(new object[] {
             "Ly",
-            "Đĩa"});
+            "Đĩa",
+            "Gói"});
             this.cbDVT.Size = new System.Drawing.Size(186, 28);
             this.cbDVT.TabIndex = 8;
             // 
@@ -122,7 +125,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbLoaiMH.Properties.Items.AddRange(new object[] {
             "Đồ uống",
-            "Đồ ăn"});
+            "Đồ ăn",
+            "Khác"});
             this.cbLoaiMH.Size = new System.Drawing.Size(186, 28);
             this.cbLoaiMH.TabIndex = 6;
             // 
@@ -194,6 +198,7 @@
             this.grTKKho.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.grTKKho.AppearanceCaption.Options.UseBackColor = true;
             this.grTKKho.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.grTKKho.Controls.Add(this.checkAnother);
             this.grTKKho.Controls.Add(this.cbDoAn);
             this.grTKKho.Controls.Add(this.cbDoUong);
             this.grTKKho.Controls.Add(this.btnTimKiemMH);
@@ -359,6 +364,18 @@
             this.btnSuaTV.Text = "Sửa";
             this.btnSuaTV.Click += new System.EventHandler(this.btnSuaTV_Click);
             // 
+            // checkAnother
+            // 
+            this.checkAnother.EditValue = true;
+            this.checkAnother.Location = new System.Drawing.Point(323, 26);
+            this.checkAnother.Name = "checkAnother";
+            this.checkAnother.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAnother.Properties.Appearance.Options.UseFont = true;
+            this.checkAnother.Properties.Caption = "Khác";
+            this.checkAnother.Size = new System.Drawing.Size(75, 20);
+            this.checkAnother.TabIndex = 10;
+            this.checkAnother.CheckedChanged += new System.EventHandler(this.cbAnother_CheckedChanged);
+            // 
             // frmQuanLyMatHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
@@ -372,7 +389,7 @@
             this.Controls.Add(this.btnSuaTV);
             this.Controls.Add(this.dtgMatHangKho);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQuanLyMatHang.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQuanLyMatHang";
@@ -392,6 +409,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbDoUong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatHangTimKiem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMatHangKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkAnother.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +440,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridView dtgMatHangKho;
+        private DevExpress.XtraEditors.CheckEdit checkAnother;
     }
 }

@@ -4,9 +4,9 @@ namespace CoffeeManagement
 {
     public class MatHangDaChon
     {
-        public MatHang MatHang { get; set; }
+        public MatHangChiTiet MatHang { get; set; }
         public int SoLuong { get; set; }
-        public MatHangDaChon(MatHang MatHang, int SoLuong)
+        public MatHangDaChon(MatHangChiTiet MatHang, int SoLuong)
         {
             this.MatHang = MatHang;
             this.SoLuong = SoLuong;
