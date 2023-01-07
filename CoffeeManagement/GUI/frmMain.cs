@@ -1065,6 +1065,9 @@ namespace CoffeeManagement
             
         }
 
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

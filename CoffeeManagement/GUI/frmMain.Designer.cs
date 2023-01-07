@@ -60,7 +60,6 @@
             this.pnlTimKiem = new System.Windows.Forms.Panel();
             this.txtSDTTimKiem = new DevExpress.XtraEditors.TextEdit();
             this.lbSDTTimKiem = new DevExpress.XtraEditors.LabelControl();
-            this.btnTimKiemTV = new DevExpress.XtraEditors.SimpleButton();
             this.grDanhSachTV = new DevExpress.XtraEditors.GroupControl();
             this.btnSuaTV = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoaTV = new DevExpress.XtraEditors.SimpleButton();
@@ -93,13 +92,13 @@
             this.lbSoLuong = new DevExpress.XtraEditors.LabelControl();
             this.lbTenMatHang = new DevExpress.XtraEditors.LabelControl();
             this.grbTimKiem = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.checkAnother = new DevExpress.XtraEditors.CheckEdit();
             this.dtgDanhSachMatHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
             this.cbDoAn = new DevExpress.XtraEditors.CheckEdit();
             this.cbDoUong = new DevExpress.XtraEditors.CheckEdit();
@@ -407,7 +406,6 @@
             this.pnlTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTimKiem.Controls.Add(this.txtSDTTimKiem);
             this.pnlTimKiem.Controls.Add(this.lbSDTTimKiem);
-            this.pnlTimKiem.Controls.Add(this.btnTimKiemTV);
             this.pnlTimKiem.Location = new System.Drawing.Point(26, 30);
             this.pnlTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTimKiem.Name = "pnlTimKiem";
@@ -436,22 +434,6 @@
             this.lbSDTTimKiem.Size = new System.Drawing.Size(99, 24);
             this.lbSDTTimKiem.TabIndex = 0;
             this.lbSDTTimKiem.Text = "Nhập SĐT";
-            // 
-            // btnTimKiemTV
-            // 
-            this.btnTimKiemTV.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.btnTimKiemTV.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemTV.Appearance.Options.UseBackColor = true;
-            this.btnTimKiemTV.Appearance.Options.UseFont = true;
-            this.btnTimKiemTV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTimKiemTV.ImageOptions.Image = global::CoffeeManagement.Properties.Resources.imgSearch;
-            this.btnTimKiemTV.Location = new System.Drawing.Point(158, 108);
-            this.btnTimKiemTV.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiemTV.Name = "btnTimKiemTV";
-            this.btnTimKiemTV.Size = new System.Drawing.Size(149, 55);
-            this.btnTimKiemTV.TabIndex = 7;
-            this.btnTimKiemTV.Text = "Tìm kiếm";
-            this.btnTimKiemTV.Click += new System.EventHandler(this.btnTimKiemTV_Click);
             // 
             // grDanhSachTV
             // 
@@ -944,9 +926,9 @@
             this.grbTimKiem.AppearanceCaption.Options.UseFont = true;
             this.grbTimKiem.AppearanceCaption.Options.UseForeColor = true;
             this.grbTimKiem.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.grbTimKiem.Controls.Add(this.labelControl1);
             this.grbTimKiem.Controls.Add(this.checkAnother);
             this.grbTimKiem.Controls.Add(this.dtgDanhSachMatHang);
-            this.grbTimKiem.Controls.Add(this.btnTimKiem);
             this.grbTimKiem.Controls.Add(this.txtTimKiem);
             this.grbTimKiem.Controls.Add(this.cbDoAn);
             this.grbTimKiem.Controls.Add(this.cbDoUong);
@@ -956,6 +938,18 @@
             this.grbTimKiem.Size = new System.Drawing.Size(438, 727);
             this.grbTimKiem.TabIndex = 1;
             this.grbTimKiem.Text = "KHU VỰC TÌM KIẾM";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(19, 106);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(61, 17);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Tìm kiếm";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // checkAnother
             // 
@@ -1064,31 +1058,15 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(126)))), ((int)(((byte)(176)))));
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseBackColor = true;
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTimKiem.ImageOptions.Image = global::CoffeeManagement.Properties.Resources.imgSearch;
-            this.btnTimKiem.Location = new System.Drawing.Point(299, 92);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(126, 46);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(19, 100);
+            this.txtTimKiem.Location = new System.Drawing.Point(83, 100);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Properties.Appearance.Options.UseFont = true;
             this.txtTimKiem.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtTimKiem.Size = new System.Drawing.Size(239, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(338, 28);
             this.txtTimKiem.TabIndex = 1;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -1182,6 +1160,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 61);
             this.tabMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedTabPage = this.tabQLBan;
             this.tabMain.Size = new System.Drawing.Size(1330, 788);
             this.tabMain.TabIndex = 0;
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
@@ -1242,6 +1221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grbTimKiem)).EndInit();
             this.grbTimKiem.ResumeLayout(false);
+            this.grbTimKiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkAnother.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDanhSachMatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
@@ -1275,7 +1255,6 @@
         private System.Windows.Forms.Panel pnlTimKiem;
         private DevExpress.XtraEditors.TextEdit txtSDTTimKiem;
         private DevExpress.XtraEditors.LabelControl lbSDTTimKiem;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiemTV;
         private DevExpress.XtraEditors.GroupControl grDanhSachTV;
         private DevExpress.XtraEditors.SimpleButton btnSuaTV;
         private DevExpress.XtraEditors.SimpleButton btnXoaTV;
@@ -1314,13 +1293,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private DevExpress.XtraEditors.TextEdit txtTimKiem;
         private DevExpress.XtraEditors.CheckEdit cbDoAn;
         private DevExpress.XtraEditors.CheckEdit cbDoUong;
         private DevExpress.XtraEditors.GroupControl grbQLBan;
         private System.Windows.Forms.ListView lvHienThiBan;
         private DevExpress.XtraTab.XtraTabControl tabMain;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
 
