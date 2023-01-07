@@ -35,8 +35,6 @@ namespace CoffeeManagement
             LoatMatHangData();
             LoadBanData();
 
-            // load du lieu vao report
-            dateNgayBDTinh.DateTime = dateReport;
             loadDataReport();
             this.txtTimKiem.Select();
         }
@@ -718,10 +716,6 @@ namespace CoffeeManagement
             btnDangXuat.Location = new Point(btnDangXuat.Location.X + 4 * addSize, btnDangXuat.Location.Y);
             btnLoginAD.Width += addSize;
             btnLoginAD.Location = new Point(btnLoginAD.Location.X + 5 * addSize, btnLoginAD.Location.Y);
-            btnTacGia.Width += addSize;
-            btnTacGia.Location = new Point(btnTacGia.Location.X + 6 * addSize, btnTacGia.Location.Y);
-            btnExit.Width = this.ClientSize.Width - btnTacGia.Location.X - btnTacGia.Width;
-            btnExit.Location = new Point(btnTacGia.Location.X + btnTacGia.Width, btnExit.Location.Y);
 
             // resize dtg dstv
 
@@ -840,7 +834,6 @@ namespace CoffeeManagement
 
         private void dateNgayBDTinh_TextChanged(object sender, EventArgs e)
         {
-            dateReport = dateNgayBDTinh.DateTime;
             loadDataReport();
         }
         private void loadDataReport()
@@ -852,34 +845,20 @@ namespace CoffeeManagement
                 report.dataReport.Rows[i][4] = int.Parse(report.dataReport.Rows[i][2].ToString()) * int.Parse(report.dataReport.Rows[i][3].ToString());
                 sum += int.Parse(report.dataReport.Rows[i][4].ToString());
             }
-            report.dataReport.Rows.Add();
-            report.dataReport.Rows[report.dataReport.Rows.Count - 1][0] = "Tổng";
-            report.dataReport.Rows[report.dataReport.Rows.Count - 1][4] = sum;
-            dtgBaoCao.DataSource = report.dataReport;
-            chartReport.Series["Thu"].DataSource = report.createChart("day");
-            chartReport.Series["Thu"].ArgumentDataMember = "NgayThanhToan";
-            chartReport.Series["Thu"].ValueDataMembers.AddRange(new string[] { "DoanhThu" });
         }
 
         private void rdNgay_CheckedChanged(object sender, EventArgs e)
         {
-            chartReport.Series["Thu"].DataSource = report.createChart("day");
-            chartReport.Series["Thu"].ArgumentDataMember = "NgayThanhToan";
-            chartReport.Series["Thu"].ValueDataMembers.AddRange(new string[] { "DoanhThu" });
+            
         }
 
         private void rdTuan_CheckedChanged(object sender, EventArgs e)
         {
-            chartReport.Series["Thu"].DataSource = report.createChart("week");
-            chartReport.Series["Thu"].ArgumentDataMember = "NgayThanhToan";
-            chartReport.Series["Thu"].ValueDataMembers.AddRange(new string[] { "DoanhThu" });
+            
         }
 
         private void rdThang_CheckedChanged(object sender, EventArgs e)
         {
-            chartReport.Series["Thu"].DataSource = report.createChart("month");
-            chartReport.Series["Thu"].ArgumentDataMember = "NgayThanhToan";
-            chartReport.Series["Thu"].ValueDataMembers.AddRange(new string[] { "DoanhThu" });
         }
         #endregion
 

@@ -515,7 +515,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LỊCH SỬ BÁN HÀNG";
+            this.Text = "BÁO CÁO DOANH THU THEO THỜI GIAN";
             this.contextMenuHoaDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgHoaDon)).EndInit();
             this.gbFilter.ResumeLayout(false);
