@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Utils.CommonDialogs;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -424,6 +425,60 @@ namespace CoffeeManagement
             dtgHoaDon.DataSource = ListBuffer;
         }
 
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+            //khai báo thư viện hỗ trợ Microsoft.Office.Interop.Excel
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+                //Tạo đối tượng COM.
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+                //tạo mới một Workbooks bằng phương thức add()
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                //đặt tên cho sheet
+                worksheet.Name = "Báo cáo doanh thu";
+
+                // export header trong DataGridView
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    //MessageBox.Show(dataGridView1.Columns[i].HeaderText.ToString());
+                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText.ToString();
+                }
+                // export nội dung trong DataGridView
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[j].Value == null )
+                        {
+                            worksheet.Cells[i + 2, j + 1] = "";
+                        }
+                        else worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                // sử dụng phương thức SaveAs() để lưu workbook với filename
+                workbook.SaveAs(fileName);
+                //đóng workbook
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+
         #endregion
 
 
@@ -522,5 +577,29 @@ namespace CoffeeManagement
             }
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            // tạo SaveFileDialog để lưu file excel
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            // chỉ lọc ra các file có định dạng Excel
+            dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+
+            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = dialog.FileName;
+            }
+
+            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+            if (string.IsNullOrEmpty(filePath))
+            {
+                return;
+            }
+            //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
+            ToExcel(dtgHoaDon, filePath);
+        }
     }
 }
