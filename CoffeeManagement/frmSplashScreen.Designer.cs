@@ -51,7 +51,7 @@
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(145, 13);
             this.labelCopyright.TabIndex = 6;
-            this.labelCopyright.Text = "Copyright 2019 © Team Forty";
+            this.labelCopyright.Text = "Copyright 2023 ©";
             this.labelCopyright.UseWaitCursor = true;
             // 
             // labelStatus

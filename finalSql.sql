@@ -1,6 +1,6 @@
 ﻿-------------------------------TẠO CSDL, TẠO BẢNG, ...
 use master
-drop database QuanLyQuanCafe
+
 CREATE DATABASE QuanLyQuanCafe
 GO
 USE QuanLyQuanCafe
@@ -132,34 +132,34 @@ INSERT INTO MatHang VALUES('A002', N'Cafe hạt', N'Khác', N'Gói', 20000)
 
 
 SET DATEFORMAT DMY
-INSERT INTO ThanhVien VALUES( 'TV001', N'Nguyễn Xuân Tú', '0389878809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV002', N'Huỳnh Thị Kim Trâm', '0389873409', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV003', N'Hà Thúy Hằng', '0384578809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV004', N'Phan Lê Na', '0389878809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV005', N'Nguyễn Xuân Tiến', '038987864', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV006', N'Lê Anh Tú', '0389878809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV007', N'Lê Anh Trung', '0383458809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV008', N'Bùi Thu Trà', '0389864565', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV009', N'Nguyễn Thị Giang', '0983866669', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV010', N'Ngô Nữ Bảo Trâm', '0389444409', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV011', N'Nguyễn Ngọc Ánh', '0389822209', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV012', N'Hà Thị Giang', '0981118809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV013', N'Nguyễn Thị Minh Hải', '0322273409', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV014', N'Võ Thị Liên', '038944409', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV015', N'Huỳnh Thị Kim Trúc', '0987777809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV016', N'Trần Thị Huỳnh Ngọc', '0389888809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV017', N'Lê Xuân Sơn', '03478809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV018', N'Nguyễn David Tuấn', '0897578809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV019', N'Nguyễn Ken Shin', '0983873409', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV020', N'Nguyễn Lê Bảo Bình', '0397258809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV021', N'Lê Hoàng Liêm', '0985678809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV022', N'Hoàng Thái Bảo', '0984878809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV023', N'Trương Ngọc Hiếu', '054278809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV024', N'Võ Kim Sơn', '0975878809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV025', N'Nguyễn Nhật Chiêu', '0389866809', '13/11/2019', N'Thường', 0) 
-INSERT INTO ThanhVien VALUES( 'TV026', N'Nguyễn Xuân Dương', '0983878809', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV027', N'Nguyễn Thiện Quang', '0389873409', '13/11/2019', N'Thường', 0)
-INSERT INTO ThanhVien VALUES( 'TV028', N'Lê Anh Tuấn', '0369636841', '16/12/2019', N'Bạc', 0)
+INSERT INTO ThanhVien VALUES( 'TV001', N'Nguyễn Xuân Tú', '0389878809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV002', N'Huỳnh Thị Kim Trâm', '0389873409', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV003', N'Hà Thúy Hằng', '0384578809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV004', N'Phan Lê Na', '0389878809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV005', N'Nguyễn Xuân Tiến', '038987864', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV006', N'Lê Anh Tú', '0389878809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV007', N'Lê Anh Trung', '0383458809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV008', N'Bùi Thu Trà', '0389864565', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV009', N'Nguyễn Thị Giang', '0983866669', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV010', N'Ngô Nữ Bảo Trâm', '0389444409', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV011', N'Nguyễn Ngọc Ánh', '0389822209', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV012', N'Hà Thị Giang', '0981118809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV013', N'Nguyễn Thị Minh Hải', '0322273409', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV014', N'Võ Thị Liên', '038944409', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV015', N'Huỳnh Thị Kim Trúc', '0987777809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV016', N'Trần Thị Huỳnh Ngọc', '0389888809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV017', N'Lê Xuân Sơn', '03478809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV018', N'Nguyễn David Tuấn', '0897578809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV019', N'Nguyễn Ken Shin', '0983873409', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV020', N'Nguyễn Lê Bảo Bình', '0397258809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV021', N'Lê Hoàng Liêm', '0985678809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV022', N'Hoàng Thái Bảo', '0984878809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV023', N'Trương Ngọc Hiếu', '054278809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV024', N'Võ Kim Sơn', '0975878809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV025', N'Nguyễn Nhật Chiêu', '0389866809', '13/11/2023', N'Thường', 0) 
+INSERT INTO ThanhVien VALUES( 'TV026', N'Nguyễn Xuân Dương', '0983878809', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV027', N'Nguyễn Thiện Quang', '0389873409', '13/11/2023', N'Thường', 0)
+INSERT INTO ThanhVien VALUES( 'TV028', N'Lê Anh Tuấn', '0369636841', '16/12/2023', N'Bạc', 0)
 Go
 
 
@@ -650,7 +650,7 @@ insert into Ban default values
 --select * from Ban
 --select * from BanGopChung
 
---update HoaDon set NgayThanhToan='13/12/2019'
+--update HoaDon set NgayThanhToan='13/12/2023'
 --where ID = 'HD001'
 
 --delete from BanGopChung
@@ -681,7 +681,7 @@ insert into Ban default values
 --from HoaDon, ThongTinHoaDon, MatHang 
 --where HoaDon.ID = ThongTinHoaDon.IDHoaDon 
 --and MatHang.ID = ThongTinHoaDon.IDMatHang 
---and NgayThanhToan >= '01/12/2019'
+--and NgayThanhToan >= '01/12/2023'
 --group by TenMatHang, DonViTinh, Gia
 
 --set dateformat dmy select CONVERT(varchar(7), NgayThanhToan, 120) as ThangThanhToan , SUM(ThanhTien) as DoanhThu from HoaDon
