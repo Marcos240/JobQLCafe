@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using CoffeeManagement.DataAcessObject;
 using CoffeeManagement.DataTransfertObject;
 using CoffeeManagement.GUI;
 
@@ -747,11 +748,12 @@ namespace CoffeeManagement
         }
         private void checkAdmin(string user, string password)
         {
-            if (user == "uit" && password == "0000")
-            {
+            if(Global.GlobalUser == "admin") { 
                 btnBanMoi.Enabled = true;
                 btnXemKho.Enabled = true;
                 btnLoginAD.Enabled = false;
+                btnDangXuat.Enabled = true;
+                btnChangePassword.Enabled = true;
             }
         }
         private bool isLogin = false;
@@ -767,6 +769,8 @@ namespace CoffeeManagement
                     btnXemKho.Enabled = false;
                     btnBanMoi.Enabled = false;
                     btnLoginAD.Enabled = true;
+                    btnDangXuat.Enabled = false;
+                    btnChangePassword.Enabled = false;
                     (new frmDialog("Đăng xuất thành công!", Message.SUCCESS)).Show();
                 }
             }
@@ -1068,6 +1072,12 @@ namespace CoffeeManagement
         private void labelControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            frm.ShowDialog();
         }
     }
 }

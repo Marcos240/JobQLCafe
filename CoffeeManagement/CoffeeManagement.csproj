@@ -97,10 +97,12 @@
     <Compile Include="DataAcessObject\BanGopChungDAO.cs" />
     <Compile Include="DataAcessObject\CTHDDAO.cs" />
     <Compile Include="DataAcessObject\DataAccess.cs" />
+    <Compile Include="DataAcessObject\Global.cs" />
     <Compile Include="DataAcessObject\HoaDonDAO.CS" />
     <Compile Include="DataAcessObject\MatHangDAO.cs" />
     <Compile Include="DataAcessObject\ReportDAO.cs" />
     <Compile Include="DataAcessObject\ThanhVienDAO.cs" />
+    <Compile Include="DataAcessObject\UserLoginDAO.cs" />
     <Compile Include="DataTransfertObject\Ban.cs" />
     <Compile Include="DataTransfertObject\ChiTietHoaDon.cs" />
     <Compile Include="DataTransfertObject\Function.cs" />
@@ -112,6 +114,12 @@
     <Compile Include="DataTransfertObject\MatHangOrder.cs" />
     <Compile Include="DataTransfertObject\Report.cs" />
     <Compile Include="DataTransfertObject\ThanhVien.cs" />
+    <Compile Include="GUI\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +212,9 @@
     <Compile Include="XtraReport1.Designer.cs">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmThongTin.resx">
       <DependentUpon>frmThongTin.cs</DependentUpon>
     </EmbeddedResource>

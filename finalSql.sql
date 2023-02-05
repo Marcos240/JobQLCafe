@@ -14,6 +14,14 @@ GO
 --HoaDon
 --ThongTinHoaDon
 
+CREATE TABLE UserLogin
+(
+	ID INT IDENTITY (1,1) PRIMARY KEY,
+	Username NVARCHAR(100) NOT NULL,
+	Password NVARCHAR(100) NOT NULL,
+)
+
+INSERT INTO UserLogin VALUES(N'admin',N'admin')
 
 CREATE TABLE Ban
 (
