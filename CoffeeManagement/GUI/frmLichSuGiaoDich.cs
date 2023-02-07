@@ -439,7 +439,7 @@ namespace CoffeeManagement
                 excel.DisplayAlerts = false;
                 //tạo mới một Workbooks bằng phương thức add()
                 workbook = excel.Workbooks.Add(Type.Missing);
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                worksheet = workbook.Sheets[1];
                 //đặt tên cho sheet
                 worksheet.Name = "Báo cáo doanh thu";
 
